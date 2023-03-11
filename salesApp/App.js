@@ -13,33 +13,39 @@ export default function App() {
   }
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>Welcome</Text>
+      {/* <Text numberOfLines={1} onPress={handlePress}>Welcome</Text> */}
 
       {/* image inside project */}
       {/* <Image source={require('./assets/favicon.png')}/> */}
 
       {/* image from web */}
-      <Image fadeDuration={1000} source={{
+      {/* <Image fadeDuration={1000} source={{
         width:200,
         height:200,
-        uri:"https://picsum.photos/200/300"}}/>
+        uri:"https://picsum.photos/200/300"}}/> */}
 
       {/* works both on ios and android */}
-        <Button title='ALERT' 
+        {/* <Button title='ALERT' 
         onPress={()=>
         Alert.alert("Mytitle", "my message", [
           {text:"Yes",onPress:()=>console.log("Yes")},
           {text:"No",onPress:()=>console.log("No")}
         ])}>
-        </Button>
+        </Button> */}
 
         {/* works only on ios */}
-        <Button title='prompt' onPress={()=>
-        Alert.prompt("Mytitle", "my message", text=>console.log("prompted"))}></Button>
+        {/* <Button title='prompt' onPress={()=>
+        Alert.prompt("Mytitle", "my message", text=>console.log("prompted"))}></Button> */}
 
       {/* occupies exactly half of the screen */}
-        <View
-        style={{backgroundColor:"dodgerblue",width:"50%",height:70}}></View>
+        {/* <View
+        style={{backgroundColor:"dodgerblue",width:"50%",height:70}}></View> */}
+        {/* flex */}
+        <View style={{backgroundColor:"white",flex:1,flexDirection:'column',alignItems:"center"}}>
+          <View style={{backgroundColor:"dodgerblue", width:100,height:100, alignSelf:"flex-start"}} />
+          <View style={{backgroundColor:"gold",  width:100,height:100}} />
+          <View style={{backgroundColor:"tomato", width:100,height:100}} />
+        </View>
 
       {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
