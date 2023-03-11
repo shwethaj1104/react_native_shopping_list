@@ -1,7 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,SafeAreaView, Image, Button, Alert,Platform } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View,SafeAreaView, Image, Button, Alert,Platform,StatusBar ,
+  Dimensions
+} from 'react-native';
+
 
 export default function App() {
+  //Dimensios component will not get us updated dimensions when phone is switched from portrait to landscape so we use useDimensions hook
+  console.log(Dimensions.get("screen"))
+  // console.log(useImageDimensions())
   const handlePress=()=>{
     console.log("text click")
   }
@@ -11,7 +17,7 @@ export default function App() {
 
       {/* image inside project */}
       {/* <Image source={require('./assets/favicon.png')}/> */}
-      
+
       {/* image from web */}
       <Image fadeDuration={1000} source={{
         width:200,
@@ -31,7 +37,11 @@ export default function App() {
         <Button title='prompt' onPress={()=>
         Alert.prompt("Mytitle", "my message", text=>console.log("prompted"))}></Button>
 
-      <StatusBar style="auto" />
+      {/* occupies exactly half of the screen */}
+        <View
+        style={{backgroundColor:"dodgerblue",width:"50%",height:70}}></View>
+
+      {/* <StatusBar style="auto" /> */}
     </SafeAreaView>
   );
 }
@@ -41,7 +51,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     // justifyContent:'center',
-    alignItems:'center',
-    paddingTop:Platform.OS==='android' ? 20 : 0
+    // alignItems:'center',
+    // paddingTop:Platform.OS==='android' ? 20 : 0
+    paddingTop:Platform.OS==='android' ? StatusBar.currentHeight : 0
   },
 });
