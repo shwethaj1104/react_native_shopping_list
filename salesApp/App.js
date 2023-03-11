@@ -8,12 +8,17 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text numberOfLines={1} onPress={handlePress}>Welcome</Text>
+
+      {/* image inside project */}
       {/* <Image source={require('./assets/favicon.png')}/> */}
+      
+      {/* image from web */}
       <Image fadeDuration={1000} source={{
         width:200,
         height:200,
         uri:"https://picsum.photos/200/300"}}/>
 
+      {/* works both on ios and android */}
         <Button title='ALERT' 
         onPress={()=>
         Alert.alert("Mytitle", "my message", [
